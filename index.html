@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manish Singh — Portfolio</title>
+  <meta name="description" content="Frontend developer crafting fast, accessible, and beautiful web experiences." />
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Manish Singh — Portfolio">
+  <meta property="og:description" content="Frontend developer crafting fast, accessible, and beautiful web experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/hero-bg.svg">
+  <link rel="icon" href="assets/icons/favicon.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" as="image" href="assets/img/hero-bg.svg">
+  <link rel="preload" as="image" href="assets/img/progile.jpg">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#hero" class="brand" aria-label="Home">
+        <span class="logo">M</span>
+        <span class="brand-text">Manish</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="themeToggle" class="btn btn-ghost" aria-label="Toggle dark mode">🌓</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow">Frontend Developer</p>
+        <h1>Hi, I'm <span class="accent">Manish Singh</span>.</h1>
+        <p class="sub">I build fast, accessible, and delightful web apps with HTML, CSS, JavaScript, and modern frameworks.</p>
+        <div class="cta-group">
+  <a class="btn" href="#projects">View Projects</a>
+  <a class="btn btn-ghost" href="Resume-Manish.pdf" download>Download Résumé</a>
+  <a class="btn btn-ghost" href="Resume-Manish.pdf" target="_blank">View Résumé</a>
+</div>
+        <div class="socials" aria-label="Social media">
+          <a href="https://github.com/manish232000" aria-label="GitHub" rel="noopener" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/manish-singh-5ba396246/" aria-label="LinkedIn" rel="noopener" target="_blank">LinkedIn</a>
+          <a href="mailto:my987654321manish@gmail.com" aria-label="Email">Email</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/img/profile.jpg" alt="Manish Singh portrait" width="512" height="512" loading="eager" decoding="async">
+      </div>
+      <img class="hero-bg" src="assets/img/hero-bg.svg" alt="" aria-hidden="true" />
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container reveal">
+      <header class="section-header">
+        <h2>About</h2>
+        <p>A little bit about me</p>
+      </header>
+      <div class="grid two">
+        <div>
+          <p>I’m a frontend developer skilled in HTML, CSS, JavaScript, ReactJS, and C++. I love building scalable, high-performance, and accessible applications.</p>
+          <p>I have hands-on experience with API integration, Git, and operating systems. When I’m not coding, you'll find me solving problems on GeeksforGeeks and LeetCode.</p>
+          <ul class="checks">
+            <li>Accessible UI (WCAG 2.2)</li>
+            <li>Responsive Design</li>
+            <li>Performance-first</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quick Facts</h3>
+          <ul class="facts">
+            <li><strong>Based in:</strong> India</li>
+            <li><strong>Experience:</strong> Internship + Projects</li>
+            <li><strong>Open to:</strong> Freelance & Full-time</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container reveal">
+      <header class="section-header">
+        <h2>Skills</h2>
+        <p>Tools & technologies I work with</p>
+      </header>
+      <div class="skills">
+        <div class="skill"><span>HTML</span><progress value="95" max="100"></progress></div>
+        <div class="skill"><span>CSS</span><progress value="92" max="100"></progress></div>
+        <div class="skill"><span>JavaScript</span><progress value="90" max="100"></progress></div>
+        <div class="skill"><span>ReactJS</span><progress value="85" max="100"></progress></div>
+        <div class="skill"><span>C++ (DSA)</span><progress value="80" max="100"></progress></div>
+        <div class="skill"><span>API Integration</span><progress value="80" max="100"></progress></div>
+        <div class="skill"><span>Git</span><progress value="85" max="100"></progress></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container reveal">
+      <header class="section-header">
+        <h2>Projects</h2>
+        <p>Some things I’ve built</p>
+      </header>
+
+      <div id="projectGrid" class="grid two"></div>
+
+      <!-- Modal -->
+      <dialog id="projectModal" class="modal">
+        <article class="modal-content">
+          <header class="modal-header">
+            <h3 id="modalTitle">Project Title</h3>
+            <button class="close" aria-label="Close">✕</button>
+          </header>
+          <img id="modalImage" src="" alt="" loading="lazy" />
+          <p id="modalDesc"></p>
+          <div class="modal-actions">
+            <a id="modalLive" class="btn" href="#" target="_blank" rel="noopener">Live</a>
+            <a id="modalCode" class="btn btn-ghost" href="#" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+      </dialog>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section container reveal">
+      <header class="section-header">
+        <h2>Experience</h2>
+        <p>Where I’ve worked</p>
+      </header>
+      <ol class="timeline">
+        <li>
+          <div class="time">06/2024 – 09/2024</div>
+          <div class="content">
+            <h3>Frontend Developer Intern · DigiGlobe Solutions Pvt Ltd</h3>
+            <p>Optimized state management for 200+ users, reducing load time by 15%. Built API communication layer improving reliability by 20%. Enhanced UI/UX, increasing satisfaction by 10%.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section container reveal">
+      <header class="section-header">
+        <h2>Testimonials</h2>
+        <p>What people say</p>
+      </header>
+      <div class="slider" aria-roledescription="carousel">
+        <button class="slider-prev" aria-label="Previous">‹</button>
+        <div class="slides" id="slides" tabindex="0" aria-live="polite">
+          <blockquote class="slide">
+            <p>“Manish delivered a blazing fast website with pixel-perfect UI. Highly recommend!”</p>
+            <footer>— Client A</footer>
+          </blockquote>
+          <blockquote class="slide">
+            <p>“A great partner who communicates clearly and ships on time.”</p>
+            <footer>— Client B</footer>
+          </blockquote>
+        </div>
+        <button class="slider-next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container reveal">
+      <header class="section-header">
+        <h2>Contact</h2>
+        <p>Let’s work together</p>
+      </header>
+      <form id="contactForm" class="card" novalidate>
+        <div class="grid two">
+          <label> Name
+            <input type="text" name="name" required placeholder="Your name" autocomplete="name" />
+          </label>
+          <label> Email
+            <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+          </label>
+        </div>
+        <label> Message
+          <textarea name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Send</button>
+          <p role="status" id="formStatus" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Manish Singh. All rights reserved.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript container">This site works best with JavaScript enabled.</div>
+  </noscript>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
